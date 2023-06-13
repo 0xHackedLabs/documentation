@@ -2,7 +2,9 @@
 
 Welcome to [0xHacked](https://0xHacked.com)!
 
-Before we start, there are a few reminders that merit attention. There is no need to drain the entire contract when providing proof of the vulnerability's existence. To expedite the process, please simplify the code and logic; for example, minimal disruption will suffice concerning reentrancy attacks. If you need to use a flash loan, utilize the deal (`zkProver evm -h`) function to supplement the necessary ETH to your address.
+[0xHacked](https://0xHacked.com) is a trustless bug bounty platform where the whitehat can submit the proof of exploit to claim a bug bounty without disclosing any details through the zero-knowledge proof. We aspire to safeguard the interests of whitehats and ensure they receive a deserved bounty for their findings and efforts. Furthermore, we aim to transform the relationship between hackers and projects by fostering dialogue rather than destruction. We hope you have an enjoyable experience at [0xHacked](https://0xHacked.com). Enjoy hacking!
+
+Before we start, there are a few reminders that merit attention. You don't need to drain the entire contract when providing proof of the vulnerability's existence. To expedite the process, please simplify the code and logic; for example, minimal disruption will suffice concerning reentrancy attacks. If you need a flash loan, utilize the deal (`zkProver evm -h`) function to supplement the necessary ETH to your address.
 
 ## Quickstart
 ### 1. prepare the PoC
@@ -25,7 +27,7 @@ Here are some [PoC demos](https://github.com/0xHackedLabs/PoC) for your referenc
 
 ### 2. generate the proof
 
-After debugging this exploit contract using [Foundry](https://github.com/foundry-rs/foundry), generate the proof of exploit by following:
+After debugging this exploit contract using [Foundry](https://github.com/foundry-rs/foundry), you can generate the proof of exploit on [HuggingFace](https://huggingface.co/spaces/0xHacked/zkProver) online or follow the commands below to do it locally:
 
 ``` bash
 zkProver evm Exploit.sol:Exploit -b BLOCK_NUMBER -r https://rpc.flashbots.net/
@@ -38,4 +40,4 @@ If you haven't installed zkProver, please visit [how to compile from source](htt
 
 ### 3. upload the proof
 
-Upload your proof binary file to [0xHacked](https://0xHacked.com), which ends with `.bin`. We'll check the token balance change and state diff once uploaded and confirm the exploit asap.
+Upload your proof binary file to [0xHacked](https://0xHacked.com), or send us the proof on Telegram (https://HackedLabs.t.me), which ends with `.bin`. We'll check the token balance change and state diff once uploaded and confirm the exploit asap.
