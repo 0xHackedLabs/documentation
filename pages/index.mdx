@@ -1,0 +1,41 @@
+# 0xHacked
+
+Welcome to [0xHacked](https://0xHacked.com)!
+
+Before we commence, there are a few reminders that merit attention. There is no need to drain the entire contract when providing proof of the vulnerability's existence. To expedite the process, please simplify the code and logic; for example, minimal disruption will suffice concerning reentrancy attacks. Should a flash loan be necessary, utilize the deal (`zkProver evm -h`) function to supplement the requisite ETH to your account.
+
+# Quickstart
+## 1. prepare your PoC
+
+``` solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity >=0.4.22 <0.9.0;
+
+contract Exploit {
+    // constructor functions aren't supported.
+    // constructor() {
+    //     won't work here.
+    // }
+    function exploit() public {
+    }
+}
+```
+
+Here are some [PoC demos](https://github.com/0xHackedLabs/PoC) prepared by us.
+
+## 2. generate the proof
+
+After debugging this exploit contract using [Foundry](https://github.com/foundry-rs/foundry), generate the proof of exploit by following:
+
+``` bash
+zkProver evm Exploit.sol:Exploit -b BLOCK_NUMBER -r https://rpc.flashbots.net/
+
+# use -d to set the balance of your PoC contract
+zkProver evm Exploit.sol:Exploit -b BLOCK_NUMBER -r https://rpc.flashbots.net/ -d 10000ethers -d 0xdac17f958d2ee523a2206206994597c13d831ec7:100000gwei
+```
+
+If you haven't installed zkProver, please visit [how to compile from source](https://docs.0xhacked.com/compile).
+
+## 3. upload & check the token balance change and state diff
+
+Upload your proof binary file to [0xHacked](https://0xHacked.com), which ends with `.bin`.

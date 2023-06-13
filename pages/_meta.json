@@ -1,0 +1,15 @@
+{
+  "index": "Introduction",
+  "benchmark": "Benchmark",
+  "compile": "Compile",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/0xHackedLabs",
+    "newWindow": true
+  }
+}

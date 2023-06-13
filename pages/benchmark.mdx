@@ -1,0 +1,32 @@
+# Benchmark
+
+## Attack Transactions
+
+| No. | txn                                                                                                     | gas       | desc                     |
+|-----|---------------------------------------------------------------------------------------------------------|-----------|--------------------------|
+| 1   | [etherscan](https://etherscan.io/tx/0x9a97d85642f956ad7a6b852cf7bed6f9669e2c2815f3279855acf7f1328e7d46) | 1,030,588 | Rubic Router Exploit     |
+| 2   | [etherscan](https://etherscan.io/tx/0x04b166e7b4ab5105a8e9c85f08f6346de1c66368687215b0e0b58d6e5002bc32) | 1,867,563 | Sushi Router Exploit     |
+| 3   | [etherscan](https://etherscan.io/tx/0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d) | 1,949,994 | Euler Finance            |
+| 4   | [etherscan](https://etherscan.io/tx/0x0f75349606610313cb666277eeda612e72be624cae061d017e503056bbf4d8e0) | 6,131,360 | FeiProtocol-Fuse Exploit |
+
+## Proof Generation Time
+
+| Platform         | CPU      | RAM  | TXN | time         | With GPU |
+|------------------|----------|------|-----|--------------|----------|
+| Apple M1 Pro     | 10 Cores | 16G  | #1  | ~67 min      | Yes      |
+| Apple M1 Pro     | 10 Cores | 16G  | #2  | ~21 min      | Yes      |
+| Apple M1 Pro     | 10 Cores | 16G  | #3  | ~48 min      | Yes      |
+| Apple M1 Pro     | 10 Cores | 16G  | #4  | ~4.5 hr      | Yes      |
+| Apple M1 Ultra   | 20 Cores | 64G  | #1  | ~44 min      | Yes      |
+| Apple M1 Ultra   | 20 Cores | 64G  | #2  | ~15 min      | Yes      |
+| Apple M1 Ultra   | 20 Cores | 64G  | #3  | ~30 min      | Yes      |
+| Apple M1 Ultra   | 20 Cores | 64G  | #4  | ~3 hr        | Yes      |
+| AWS r6a.8xlarge  | 32 Cores | 256G | #1  | ~2 hr 47 min | No       |
+| AWS r6a.8xlarge  | 32 Cores | 256G | #2  | ~50 min      | No       |
+| AWS r6a.8xlarge  | 32 Cores | 256G | #3  | ~2 hr 6 min  | No       |
+| AWS r6a.8xlarge  | 32 Cores | 256G | #4  | ~12 hr       | No       |
+
+
+> With GPU support, the proof generation time can be shortened.
+>
+> Over the long term, we shall exert our best efforts to reduce the proof generation time.

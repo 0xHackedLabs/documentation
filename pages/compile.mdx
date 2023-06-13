@@ -1,0 +1,15 @@
+# Compile from source
+
+``` bash
+git clone github.com/0xHackedLabs/zkProver
+cd zkProver
+
+# for Linux/Windows with GPU support
+cargo build -r -F cuda
+
+# for MacOS (Apple Chip) with GPU support
+cargo build -r -F metal
+
+# for Linux/Windows/MacOS without GPU
+cargo build -r
+```
