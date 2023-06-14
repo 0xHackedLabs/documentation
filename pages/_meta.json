@@ -1,7 +1,6 @@
 {
   "index": "Introduction",
   "benchmark": "Benchmark",
-  "compile": "Compile",
   "about": {
     "title": "About",
     "type": "page"

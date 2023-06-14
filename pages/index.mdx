@@ -2,7 +2,9 @@
 
 Welcome to [0xHacked](https://0xHacked.com)!
 
-[0xHacked](https://0xHacked.com) is a trustless bug bounty platform where the whitehat can submit the proof of exploit to claim a bug bounty without disclosing any details through the zero-knowledge proof. We aspire to safeguard the interests of whitehats and ensure they receive a deserved bounty for their findings and efforts. Furthermore, we aim to transform the relationship between hackers and projects by fostering dialogue rather than destruction. We hope you have an enjoyable experience at [0xHacked](https://0xHacked.com). Enjoy hacking!
+[0xHacked](https://0xHacked.com) is a trustless bug bounty platform where the white hat can submit the proof of exploit to claim a bug bounty without disclosing any details through the zero-knowledge proof. We aspire to safeguard the interests of white hats and ensure they receive a deserved reward for their findings and efforts. Furthermore, we aim to transform the relationship between hackers and projects by fostering dialogue rather than destruction. We hope you have an enjoyable experience at [0xHacked](https://0xHacked.com).
+
+Enjoy Hacking!
 
 Before we start, there are a few reminders that merit attention. You don't need to drain the entire contract when providing proof of the vulnerability's existence. To expedite the process, please simplify the code and logic; for example, minimal disruption will suffice concerning reentrancy attacks. If you need a flash loan, utilize the deal (`zkProver evm -h`) function to supplement the necessary ETH to your address.
 
@@ -36,8 +38,8 @@ zkProver evm Exploit.sol:Exploit -b BLOCK_NUMBER -r https://rpc.flashbots.net/
 zkProver evm Exploit.sol:Exploit -b BLOCK_NUMBER -r https://rpc.flashbots.net/ -d 10000ethers -d 0xdac17f958d2ee523a2206206994597c13d831ec7:100000gwei
 ```
 
-If you haven't installed zkProver, please visit [how to compile from source](https://docs.0xhacked.com/compile).
+If you haven't installed zkProver, please visit [zkProver repository](https://github.com/0xHackedLabs/zkProver).
 
 ### 3. upload the proof
 
-Upload your proof binary file to [0xHacked](https://0xHacked.com), or send us the proof on Telegram (https://HackedLabs.t.me), which ends with `.bin`. We'll check the token balance change and state diff once uploaded and confirm the exploit asap.
+Upload your proof binary file to [0xHacked](https://0xHacked.com). The sample proof file can be downloaded from [Github](https://github.com/0xHackedLabs/documentation/blob/main/attachment/SushiRouter.proof.bin). We'll check the token balance change and state diff once uploaded and confirm the exploit asap.
