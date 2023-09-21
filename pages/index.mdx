@@ -1,12 +1,10 @@
 # 0xHacked
 
-Welcome to [0xHacked](https://0xHacked.com)!
+[0xHacked](https://0xHacked.com) is a post-audit security protocol that enables war rooms for whitehats, where the white hat can submit the proof of exploit to claim a bug bounty without disclosing details through ZKP.
 
-[0xHacked](https://0xHacked.com) is a trustless war room for whitehats, where the white hat can submit the proof of exploit to claim a bug bounty without disclosing details through the zero-knowledge proof. We aspire to safeguard the interests of white hats and ensure they receive a deserved reward for their findings and efforts. Furthermore, we aim to transform the relationship between hackers and projects by fostering dialogue rather than destruction. We hope you have an enjoyable experience at [0xHacked](https://0xHacked.com).
+Please feel free to contact me via [Telegram](https://t.me/dimitrysc) if you have any questions or encounter any errors.
 
 Enjoy Hacking!
-
-Before we start, there are a few reminders that merit attention. You don't need to drain the entire contract when providing proof of the vulnerability's existence. To expedite the process, please simplify the code and logic; for example, minimal disruption will suffice concerning reentrancy attacks. If you need a flash loan, utilize the deal (`zkProver evm -h`) function to supplement the necessary ETH to your address.
 
 ## Quickstart
 ### 1. prepare the PoC
@@ -15,11 +13,13 @@ Before we start, there are a few reminders that merit attention. You don't need 
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.4.22 <0.9.0;
 
+// This `Exploit` contract is a must-have. zkProver invokes Exploit contract by default.
 contract Exploit {
     // constructor functions aren't supported.
     // constructor() {
-    //     won't work here.
+    //    code here doesn't work.
     // }
+
     function exploit() public {
     }
 }
@@ -29,13 +29,14 @@ Here are some [PoC demos](https://github.com/0xHackedLabs/PoC) for your referenc
 
 ### 2. generate the proof
 
-After debugging this exploit contract using [Foundry](https://github.com/foundry-rs/foundry), you can generate the proof of exploit on [HuggingFace](https://huggingface.co/spaces/0xHacked/zkProver) online or follow the commands below to do it locally:
+After debugging this exploit contract using [Foundry](https://github.com/foundry-rs/foundry), you can generate the proof of exploit on [0xHacked Online Tool](https://www.0xhacked.com/tool) or follow the commands below to do it locally.
+0xHacked also supports flash loans, we stay the same as https://book.getfoundry.sh/reference/forge-std/deal. See `zkProver evm -h` for more details.
 
 ``` bash
-zkProver evm Exploit.sol:Exploit -b BLOCK_NUMBER -r https://rpc.flashbots.net/
+zkProver evm Exploit.sol -b BLOCK_NUMBER -r https://rpc.flashbots.net/
 
 # use -d to set the balance of your PoC contract
-zkProver evm Exploit.sol:Exploit -b BLOCK_NUMBER -r https://rpc.flashbots.net/ -d 10000ethers -d 0xdac17f958d2ee523a2206206994597c13d831ec7:100000gwei
+zkProver evm Exploit.sol -b BLOCK_NUMBER -r https://rpc.flashbots.net/ -d 10000ethers -d 0xdac17f958d2ee523a2206206994597c13d831ec7:100000gwei
 ```
 
 If you haven't installed zkProver, please visit [zkProver repository](https://github.com/0xHackedLabs/zkProver).
